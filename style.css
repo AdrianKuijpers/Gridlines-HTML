@@ -1,0 +1,103 @@
+* {
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container{
+  display: grid;
+  grid-template-areas:
+  "header header header header header header header"
+  "sbl listing listing listing listing listing sbr"
+  "footer footer footer footer footer footer footer";
+background-color: beige;
+}
+
+@media screen and (max-width: 1080px) {
+  .container {
+  grid-template-areas:
+  "header header"
+  "sbl listing"
+  "footer footer";
+background-color: beige;
+}
+.sbr{
+  display: none;
+}
+}
+
+ @media screen and (max-width: 700px) {
+  .container {
+  grid-template-areas:
+  "header"
+  "sbl"
+  "listing"
+  "footer";
+background-color: beige;
+}
+.sbr{
+  display: none;
+}
+}
+
+.listing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  list-style: none;
+  gap:10px;
+  grid-area: listing;
+}
+
+.sbl, .sbr, .footer, .header, .listing{
+  border: 5px solid orange;
+  border-radius: 2px;
+}
+
+.sbl{
+  grid-area: sbl;
+}
+
+.sbr{
+  grid-area: sbr;
+}
+
+.header{
+  grid-area: header;
+}
+
+.footer{
+  grid-area: footer;
+}
+
+.listing li {
+  border: 2px solid orange;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing li h2{
+  background-color: orange;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.listing .cta{
+margin-top: auto;
+border-top: 2px solid orange;
+padding: 10px;
+text-align: center;
+}
+
+.listing .cta a{
+text-decoration: none;
+color: orange;
+font-size: 30px;
+}
+
+.listing .body{
+padding: 10px;
+}
+
